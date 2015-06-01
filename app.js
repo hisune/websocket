@@ -25,4 +25,8 @@ server.on('connection', function(socket){
         console.log('b');
         client.remove(socket);
     });
+
+    socket.on('error', function(err){
+        console.log(err);
+    });
 });
