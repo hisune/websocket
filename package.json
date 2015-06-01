@@ -1,0 +1,23 @@
+{
+  "name": "websocket server demo",
+  "version": "0.0.2",
+  "description": "An server side example for websocket",
+  "author": "Hisune <hi@hisune.com>",
+  "contributors": [{
+    "name": "Hisune",
+    "email": "hi@hisune.com"
+  }],
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hisune/websocket"
+  },
+  "bugs": {
+    "url": "https://github.com/hisune/websocket/issues"
+  },
+  "keywords": [
+    "websocket",
+    "example"
+  ],
+  "license": "MIT"
+}
