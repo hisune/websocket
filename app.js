@@ -13,7 +13,7 @@ var server = require('net').createServer().listen(port, function(){
 });
 
 server.on('connection', function(socket){
-    console.log('a');
+    console.log('connect');
     var ws = new WebSocket(socket, client.list);
     client.push(socket);
 
@@ -22,7 +22,7 @@ server.on('connection', function(socket){
     });
 
     socket.on('close', function(){
-        console.log('b');
+        console.log('disconnect');
         client.remove(socket);
     });
 
