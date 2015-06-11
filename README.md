@@ -7,7 +7,11 @@ This is a simple demo about websocket protocol.
 
 数据分片、多数据包数据也已经实现！
 
+Support data fragmentation.
+
 测试兼容Chrome/Firefox/IE11。
+
+Compatible Chrome / Firefox / IE10+.
 
 ## How to use?
 

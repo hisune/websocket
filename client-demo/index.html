@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>
+	websocket protocol client demo - by hi@hisune.com
+	</title>
+    <script type="text/javascript">
+        if ("WebSocket" in window) {
+            console.log("WebSocket is supported by your Browser!");
+            var ws = new WebSocket("ws://127.0.0.1:4000/"); // modify this host and port!
+            ws.onopen = function () {
+                console.log('open');
+            };
+            ws.onmessage = function (msg) {
+                var receive = msg.data;
+                console.log("Message is received...");
+                display(receive, false);
+            };
+            ws.onclose = function () {
+                console.log("Connection is closed...");
+            };
+        } else {
+            console.log("WebSocket NOT supported by your Browser!");
+        }
+
+        function send()
+        {
+            console.log("Message is sent...");
+            var str = document.getElementById('msg').value;
+            console.log(str.length);
+            ws.send(str);
+            display(str, true);
+            document.getElementById('msg').value = '';
+        }
+
+        function display(msg, send)
+        {
+            var div = document.createElement('div');
+
+            if(send)
+                div.innerHTML = 'Me: ' + msg;
+            else
+                div.innerHTML = 'Somebody: ' + msg;
+
+            document.getElementById('content').appendChild(div);
+        }
+    </script>
+</head>
+<body>
+<div id="chat">
+    <input id="msg"/> <button onclick="send()">send</button>
+    <div id="content"></div>
+</div>
+</body>
+</html>
