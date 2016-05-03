@@ -18,6 +18,14 @@ Compatible Chrome / Firefox / IE10+.
 > node app
 
 ## A simple client?
+Note: In Chrome, you must open it in nginx or apache service.
+
+```html
+<input id="msg" />
+<button onclick="send()">send</button>
+<div id="content"></div>
+```
+
 ```js
 if ("WebSocket" in window) {
 	console.log("WebSocket is supported by your Browser!");
